@@ -22,9 +22,7 @@ using the codes listed in the table below:
 |`fliph`|Horizontal Flip|`fliph`|
 |`flipv`|Vertical Flip|`flipv`|
 |`noise`|Adds random noise to the image|`noise_0.01`,`noise_0.5`|
-|`rot`|Rotates the image by the specified amount|`rot_90`,`rot_-45`|
 |`trans`|Shifts the pixels of the image by the specified amounts in the x and y directions|`trans_20_10`,`trans_-10_0`|
-|`zoom`|Zooms into the specified region of the image, performing stretching/shrinking as necessary|`zoom_0_0_20_20`,`zoom_-10_-20_10_10`|
 |`blur`|Blurs the image by the specified amount|`blur_1.5`|
 
 
@@ -66,13 +64,6 @@ in the transform argument, the numeric value must be greater than 0.
 
 <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__noise0.01.png" alt="Noisy Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__noise0.02.png" alt="Noisy Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__noise0.05.png" alt="Noisy Image" width="150" height="150"/>
 
-#### Rotate
-Rotates the image. The angle of rotation is specified by an integer value that is included in the transform argument
-
-    python main.py ./my_images rot_90 rot_180 rot_-90
-
-<img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__rot90.png" alt="Rotated Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__rot180.png" alt="Rotated Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__rot-90.png" alt="Rotated Image" width="150" height="150"/>
-
 #### Translate
 Performs a translation on the image. The size of the translation in the x and y directions are specified by integer values that
 are included in the transform argument
@@ -80,15 +71,6 @@ are included in the transform argument
     python main.py ./my_images trans_20_20 trans_0_100
 
 <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__trans20_20.png" alt="Translated Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__trans0_100.png" alt="Translated Image" width="150" height="150"/>
-
-#### Zoom/Stretch
-Zooms in (or out) to a particular area of the image. The top-left and bottom-right coordinates of the target region are
-specified by integer values included in the transform argument. By specifying a target region with an aspect ratio that
-differs from that of the source image, stretching transformations can be performed.
-
-    python main.py ./my_images zoom_150_0_300_150 zoom_0_50_300_150 zoom_200_0_300_300
-
-<img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__zoom150_0_300_150.png" alt="Zoomed Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__zoom0_50_300_150.png" alt="Stretched Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__zoom200_0_300_300.png" alt="Stretched Image" width="150" height="150"/>
 
 #### Blur
 Blurs the image. The amount of blurring is specified by a floating-point value included in the transform argument.
